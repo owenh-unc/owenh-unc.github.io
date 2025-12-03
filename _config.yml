@@ -1,6 +1,6 @@
 # Site Settings
-baseurl: "/owenhuang.github.io" # the subpath of your site, e.g. /blog
-url: "https://h6kplus.github.io" # the base hostname & protocol for your site, 
+baseurl: "/owenh-unc.github.io" # the subpath of your site, e.g. /blog
+url: "https://owenh-unc.github.io" # the base hostname & protocol for your site, 
 
 # Features Setting
 # Turn subpages on or off
@@ -56,8 +56,8 @@ scholar:
   bibliography_template: pubstemplate
   style: apa
   locale: en
-  last_name: Me
-  first_name: [Myself, M.]
+  last_name: Huang
+  first_name: [Yidong, Y.]
   sort_by: year,month
   order: descending,ascending
 
