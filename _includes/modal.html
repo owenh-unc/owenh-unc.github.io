@@ -11,7 +11,12 @@
     </div>
     <div class="content">
       {% if project.image %}
+        {% assign media_ext = project.image.path | split: '.' | last | downcase %}
+        {% if media_ext == 'mp4' or media_ext == 'webm' %}
+        <video src="{{ project.image.path | prepend: '/assets/project/' | relative_url }}" controls loop muted playsinline preload="metadata" aria-label="{{ project.image.alt }}"></video>
+        {% else %}
         <img src="{{ project.image.path | prepend: '/assets/project/' | relative_url }}" alt="{{ project.image.alt }}">
+        {% endif %}
       {% endif%}
       <div class="description">{{ project.description }}</div>
       {% for content in project.contents %}

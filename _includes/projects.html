@@ -9,7 +9,12 @@
         <div class="card">
           {% if project.image %}
           <div class="img-wrap">
+            {% assign media_ext = project.image.path | split: '.' | last | downcase %}
+            {% if media_ext == 'mp4' or media_ext == 'webm' %}
+            <video src="{{ project.image.path | prepend: '/assets/project/' | relative_url }}" autoplay loop muted playsinline aria-label="{{ project.image.alt }}"></video>
+            {% else %}
             <img src="{{ project.image.path | prepend: '/assets/project/' | relative_url }}" alt="{{ project.image.alt }}">
+            {% endif %}
           </div>
           {% endif %}
           <div class="text-wrap {% if project.image %}{% endif %}">
