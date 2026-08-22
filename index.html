@@ -96,7 +96,7 @@
       </div>
       <div class="text-wrap col-12 col-md-8">
         <h2 class="username">Yidong Huang</h2>
-        <div class="description"><p>I’m a First Year CS Ph.D. student at UNC Chapel Hill, advised by <a href="https://www.cs.unc.edu/~mbansal/">Prof. Mohit Bansal</a>. I obtained my master degree from University of Michigan advised by <a href="https://web.eecs.umich.edu/~chaijy/">Prof. Joyce Chai</a>. In my master time, I also interned at Boson AI, supervised by <a href="https://bryanyzhu.github.io/">Yi Zhu</a>. Before that, I got my bachelor degree from University of Michigan and Shanghai Jiao Tong University.</p>
+        <div class="description"><p>I’m a Second Year CS Ph.D. student at UNC Chapel Hill, advised by <a href="https://www.cs.unc.edu/~mbansal/">Prof. Mohit Bansal</a>. I interned at Adobe Research, mentored by <a href="https://subhojyoti.github.io/">Subhojyoti Mukherjee</a> and <a href="https://krsingh.cs.ucdavis.edu/">Krishna Kumar Singh</a>. I obtained my master degree from University of Michigan advised by <a href="https://web.eecs.umich.edu/~chaijy/">Prof. Joyce Chai</a>. In my master time, I also interned at Boson AI, supervised by <a href="https://bryanyzhu.github.io/">Yi Zhu</a>. Before that, I got my bachelor degree from University of Michigan and Shanghai Jiao Tong University.</p>
 </div>  
         <div class="interest"><p>I specialize in <u>Embodied Artificial Intelligence</u> and the <u>Generative AI</u> that interact with humans and their environments. My current research goal is to create AI agents beyond mere perception and reactive generation, to develop rich representations of the world and human partners, enabling deliberative planning and collaboration with humans.</p>
 </div>
@@ -226,6 +226,11 @@
     </li>
     
     <li class="meta">
+        <p class="description">Adobe Research</p>
+        <p class="program">Research Scientist Intern</p>
+    </li>
+    
+    <li class="meta">
         <p class="description">Boson AI</p>
         <p class="program">Research Intern</p>
     </li>
@@ -255,7 +260,7 @@
 
   <section id="project">
   <div class="project-wrap">
-    <p class="title">PROJECTS</p>
+    <p class="title">PUBLICATIONS</p>
     <div class="card-container">
       
       
@@ -264,23 +269,26 @@
         <div class="card">
           
           <div class="img-wrap">
-            <img src="/assets/project/sketchverify.gif" alt="">
+            
+            
+            <video src="/assets/project/phymotion.mp4" autoplay loop muted playsinline aria-label="PhyMotion structured 3D motion reward teaser"></video>
+            
           </div>
           
           <div class="text-wrap ">
             <div class="title-wrap">
-              <p class="date">05/2025 &ndash; 10/2025</p>
-              <div class="title">SketchVerify, Planning with Sketch-Guided Verificationfor Physics-Aware Video Generation</div>
+              <p class="date">05/2026</p>
+              <div class="title">PhyMotion, Structured 3D Motion Reward for Physics-Grounded Human Video Generation</div>
             </div>
             <div class="meta">
               
             </div>
-            <div class="description">Recent video generation approaches increasingly rely on planning intermediate control signals such as object trajectories to improve temporal coherence and motion fidelity. However, these methods mostly employ single-shot plans that are typically limited to simple motions, or iterative refinement which requires multiple calls to the video generator, incuring high computational cost. To overcome these limitations, we propose SketchVerify, a training-free, sketch-verification-based planning framework that improves motion planning quality with more dynamically coherent trajectories (i.e., physically plausible and instruction-consistent motions) prior to full video generation by introducing a test-time sampling and verification loop. Given a prompt and a reference image, our method predicts multiple candidate motion plans and ranks them using a vision-language verifier that jointly evaluates semantic alignment with the instruction and physical plausibility. To efficiently score candidate motion plans, we render each trajectory as a lightweight video sketch by compositing objects over a static background, which bypasses the need for expensive, repeated diffusion-based synthesis while achieving comparable performance. We iteratively refine the motion plan until a satisfactory one is identified, which is then passed to the trajectory-conditioned generator for final synthesis. Experiments on WorldModelBench and PhyWorldBench demonstrate that our method significantly improves motion quality, physical realism, and long-term consistency compared to competitive baselines while being substantially more efficient. Our ablation study further shows that scaling up the number of trajectory candidates consistently enhances overall performance.</div>
+            <div class="description">Generating realistic human motion is a central yet unsolved challenge in video generation. While reinforcement learning (RL)-based post-training has driven recent gains in general video quality, extending it to human motion remains bottlenecked by a reward signal that cannot reliably score motion realism. Existing video rewards primarily rely on 2D perceptual signals, without explicitly modeling the 3D body state, contact, and dynamics underlying articulated human motion, and often assign high scores to videos with floating bodies or physically implausible movements. To address this, we propose PhyMotion, a structured, fine-grained motion reward that grounds recovered 3D human trajectories in a physics simulator and evaluates motion quality along multiple dimensions of physical feasibility. Concretely, we recover SMPL body meshes from generated videos, retarget them onto a humanoid in the MuJoCo physics simulator, and evaluate the resulting motion along three axes: kinematic plausibility, contact and balance consistency, and dynamic feasibility. Each component provides a continuous and interpretable signal tied to a specific aspect of motion quality, allowing the reward to capture which aspects of motion are physically correct or violated. Experiments show that PhyMotion achieves stronger correlation with human judgments than existing reward formulations. These gains carry over to RL-based post-training, where optimizing PhyMotion leads to larger and more consistent improvements than optimizing existing rewards, improving motion realism across both autoregressive and bidirectional video generators under both automatic metrics and blind human evaluation (+68 Elo gain). Ablations show that the three axes provide complementary supervision signals, while the reward preserves overall video generation quality with only modest training overhead.</div>
           </div>
           <div class="icons">
             
             
-            <a href="https://sketchverify.github.io/"><i class="far fa-eye"></i></a>
+            <a href="https://arxiv.org/abs/2605.14269"><i class="far fa-eye"></i></a>
             
             
             <a title="1" onClick="open_modal(this.title)" class="modal-btn"><i class="fas fa-plus"></i></a>
@@ -297,15 +305,18 @@
       <p>&times;</p>
     </div>
     <div class="header">
-      <p class="date">05/2025 &ndash; 10/2025</p>
-      <p class="title">SketchVerify, Planning with Sketch-Guided Verificationfor Physics-Aware Video Generation</p>
-      <p class="summary">https://arxiv.org/abs/2511.17450</p>
+      <p class="date">05/2026</p>
+      <p class="title">PhyMotion, Structured 3D Motion Reward for Physics-Grounded Human Video Generation</p>
+      <p class="summary">https://arxiv.org/abs/2605.14269</p>
     </div>
     <div class="content">
       
-        <img src="/assets/project/sketchverify.gif" alt="">
+        
+        
+        <video src="/assets/project/phymotion.mp4" controls loop muted playsinline preload="metadata" aria-label="PhyMotion structured 3D motion reward teaser"></video>
+        
       
-      <div class="description">Recent video generation approaches increasingly rely on planning intermediate control signals such as object trajectories to improve temporal coherence and motion fidelity. However, these methods mostly employ single-shot plans that are typically limited to simple motions, or iterative refinement which requires multiple calls to the video generator, incuring high computational cost. To overcome these limitations, we propose SketchVerify, a training-free, sketch-verification-based planning framework that improves motion planning quality with more dynamically coherent trajectories (i.e., physically plausible and instruction-consistent motions) prior to full video generation by introducing a test-time sampling and verification loop. Given a prompt and a reference image, our method predicts multiple candidate motion plans and ranks them using a vision-language verifier that jointly evaluates semantic alignment with the instruction and physical plausibility. To efficiently score candidate motion plans, we render each trajectory as a lightweight video sketch by compositing objects over a static background, which bypasses the need for expensive, repeated diffusion-based synthesis while achieving comparable performance. We iteratively refine the motion plan until a satisfactory one is identified, which is then passed to the trajectory-conditioned generator for final synthesis. Experiments on WorldModelBench and PhyWorldBench demonstrate that our method significantly improves motion quality, physical realism, and long-term consistency compared to competitive baselines while being substantially more efficient. Our ablation study further shows that scaling up the number of trajectory candidates consistently enhances overall performance.</div>
+      <div class="description">Generating realistic human motion is a central yet unsolved challenge in video generation. While reinforcement learning (RL)-based post-training has driven recent gains in general video quality, extending it to human motion remains bottlenecked by a reward signal that cannot reliably score motion realism. Existing video rewards primarily rely on 2D perceptual signals, without explicitly modeling the 3D body state, contact, and dynamics underlying articulated human motion, and often assign high scores to videos with floating bodies or physically implausible movements. To address this, we propose PhyMotion, a structured, fine-grained motion reward that grounds recovered 3D human trajectories in a physics simulator and evaluates motion quality along multiple dimensions of physical feasibility. Concretely, we recover SMPL body meshes from generated videos, retarget them onto a humanoid in the MuJoCo physics simulator, and evaluate the resulting motion along three axes: kinematic plausibility, contact and balance consistency, and dynamic feasibility. Each component provides a continuous and interpretable signal tied to a specific aspect of motion quality, allowing the reward to capture which aspects of motion are physically correct or violated. Experiments show that PhyMotion achieves stronger correlation with human judgments than existing reward formulations. These gains carry over to RL-based post-training, where optimizing PhyMotion leads to larger and more consistent improvements than optimizing existing rewards, improving motion realism across both autoregressive and bidirectional video generators under both automatic metrics and blind human evaluation (+68 Elo gain). Ablations show that the three axes provide complementary supervision signals, while the reward preserves overall video generation quality with only modest training overhead.</div>
       
     </div>
   </div>
@@ -319,23 +330,26 @@
         <div class="card">
           
           <div class="img-wrap">
-            <img src="/assets/project/drivlme.jpg" alt="">
+            
+            
+            <img src="/assets/project/sketchverify.gif" alt="">
+            
           </div>
           
           <div class="text-wrap ">
             <div class="title-wrap">
-              <p class="date">10/2023 &ndash; 03/2024</p>
-              <div class="title">DriVLMe, Enhancing LLM-based Autonomous Driving Agents with Embodied and Social Experiences</div>
+              <p class="date">11/2025</p>
+              <div class="title">SketchVerify, Planning with Sketch-Guided Verificationfor Physics-Aware Video Generation</div>
             </div>
             <div class="meta">
               
             </div>
-            <div class="description">Recent advancements in foundation models (FMs) have unlocked new prospects in autonomous driving, yet the experimental settings of these studies are preliminary, over-simplified, and fail to capture the complexity of real-world driving scenarios in human environments. It remains under-explored whether FM agents can handle long-horizon navigation tasks with free-from dialogue and deal with unexpected situations caused by environmental dynamics or task changes. To explore the capabilities and boundaries of FMs faced with the challenges above, we introduce DriVLMe, a video-language-model-based agent to facilitate natural and effective communication between humans and autonomous vehicles that perceive the environment and navigate. We develop DriVLMe from both embodied experiences in a simulated environment and social experiences from real human dialogue. While DriVLMe demonstrates competitive performance in both open-loop benchmarks and closed-loop human studies, we reveal several limitations and challenges, including unacceptable inference time, imbalanced training data, limited visual understanding, challenges with multi-turn interactions, simplified language generation from robotic experiences, and difficulties in handling on-the-fly unexpected situations like environmental dynamics and task changes.</div>
+            <div class="description">Recent video generation approaches increasingly rely on planning intermediate control signals such as object trajectories to improve temporal coherence and motion fidelity. However, these methods mostly employ single-shot plans that are typically limited to simple motions, or iterative refinement which requires multiple calls to the video generator, incuring high computational cost. To overcome these limitations, we propose SketchVerify, a training-free, sketch-verification-based planning framework that improves motion planning quality with more dynamically coherent trajectories (i.e., physically plausible and instruction-consistent motions) prior to full video generation by introducing a test-time sampling and verification loop. Given a prompt and a reference image, our method predicts multiple candidate motion plans and ranks them using a vision-language verifier that jointly evaluates semantic alignment with the instruction and physical plausibility. To efficiently score candidate motion plans, we render each trajectory as a lightweight video sketch by compositing objects over a static background, which bypasses the need for expensive, repeated diffusion-based synthesis while achieving comparable performance. We iteratively refine the motion plan until a satisfactory one is identified, which is then passed to the trajectory-conditioned generator for final synthesis. Experiments on WorldModelBench and PhyWorldBench demonstrate that our method significantly improves motion quality, physical realism, and long-term consistency compared to competitive baselines while being substantially more efficient. Our ablation study further shows that scaling up the number of trajectory candidates consistently enhances overall performance.</div>
           </div>
           <div class="icons">
             
             
-            <a href="https://sled-group.github.io/driVLMe/"><i class="far fa-eye"></i></a>
+            <a href="https://sketchverify.github.io/"><i class="far fa-eye"></i></a>
             
             
             <a title="2" onClick="open_modal(this.title)" class="modal-btn"><i class="fas fa-plus"></i></a>
@@ -352,15 +366,18 @@
       <p>&times;</p>
     </div>
     <div class="header">
-      <p class="date">10/2023 &ndash; 03/2024</p>
-      <p class="title">DriVLMe, Enhancing LLM-based Autonomous Driving Agents with Embodied and Social Experiences</p>
-      <p class="summary">https://arxiv.org/abs/2406.03008</p>
+      <p class="date">11/2025</p>
+      <p class="title">SketchVerify, Planning with Sketch-Guided Verificationfor Physics-Aware Video Generation</p>
+      <p class="summary">https://arxiv.org/abs/2511.17450</p>
     </div>
     <div class="content">
       
-        <img src="/assets/project/drivlme.jpg" alt="">
+        
+        
+        <img src="/assets/project/sketchverify.gif" alt="">
+        
       
-      <div class="description">Recent advancements in foundation models (FMs) have unlocked new prospects in autonomous driving, yet the experimental settings of these studies are preliminary, over-simplified, and fail to capture the complexity of real-world driving scenarios in human environments. It remains under-explored whether FM agents can handle long-horizon navigation tasks with free-from dialogue and deal with unexpected situations caused by environmental dynamics or task changes. To explore the capabilities and boundaries of FMs faced with the challenges above, we introduce DriVLMe, a video-language-model-based agent to facilitate natural and effective communication between humans and autonomous vehicles that perceive the environment and navigate. We develop DriVLMe from both embodied experiences in a simulated environment and social experiences from real human dialogue. While DriVLMe demonstrates competitive performance in both open-loop benchmarks and closed-loop human studies, we reveal several limitations and challenges, including unacceptable inference time, imbalanced training data, limited visual understanding, challenges with multi-turn interactions, simplified language generation from robotic experiences, and difficulties in handling on-the-fly unexpected situations like environmental dynamics and task changes.</div>
+      <div class="description">Recent video generation approaches increasingly rely on planning intermediate control signals such as object trajectories to improve temporal coherence and motion fidelity. However, these methods mostly employ single-shot plans that are typically limited to simple motions, or iterative refinement which requires multiple calls to the video generator, incuring high computational cost. To overcome these limitations, we propose SketchVerify, a training-free, sketch-verification-based planning framework that improves motion planning quality with more dynamically coherent trajectories (i.e., physically plausible and instruction-consistent motions) prior to full video generation by introducing a test-time sampling and verification loop. Given a prompt and a reference image, our method predicts multiple candidate motion plans and ranks them using a vision-language verifier that jointly evaluates semantic alignment with the instruction and physical plausibility. To efficiently score candidate motion plans, we render each trajectory as a lightweight video sketch by compositing objects over a static background, which bypasses the need for expensive, repeated diffusion-based synthesis while achieving comparable performance. We iteratively refine the motion plan until a satisfactory one is identified, which is then passed to the trajectory-conditioned generator for final synthesis. Experiments on WorldModelBench and PhyWorldBench demonstrate that our method significantly improves motion quality, physical realism, and long-term consistency compared to competitive baselines while being substantially more efficient. Our ablation study further shows that scaling up the number of trajectory candidates consistently enhances overall performance.</div>
       
     </div>
   </div>
@@ -374,23 +391,26 @@
         <div class="card">
           
           <div class="img-wrap">
-            <img src="/assets/project/infedit_gif.gif" alt="">
+            
+            
+            <img src="/assets/project/drivlme.jpg" alt="">
+            
           </div>
           
           <div class="text-wrap ">
             <div class="title-wrap">
-              <p class="date">09/2023 &ndash; 11/2023</p>
-              <div class="title">Inversion-Free Image Editing with Natural Language</div>
+              <p class="date">06/2024</p>
+              <div class="title">DriVLMe, Enhancing LLM-based Autonomous Driving Agents with Embodied and Social Experiences</div>
             </div>
             <div class="meta">
               
             </div>
-            <div class="description">Despite recent advances in inversion-based editing, text-guided image manipulation remains challenging for diffusion models. The primary bottlenecks include 1) the time-consuming nature of the inversion process; 2) the struggle to balance consistency with accuracy; 3) the lack of compatibility with efficient consistency sampling methods used in consistency models. To address the above issues, we start by asking ourselves if the inversion process can be eliminated for editing. We show that when the initial sample is known, a special variance schedule reduces the denoising step to the same form as the multi-step consistency sampling. We name this Denoising Diffusion Consistent Model (DDCM), and note that it implies a virtual inversion strategy without explicit inversion in sampling. We further unify the attention control mechanisms in a tuning-free framework for text-guided editing. Combining them, we present inversion-free editing (InfEdit), which allows for consistent and faithful editing for both rigid and non-rigid semantic changes, catering to intricate modifications without compromising on the image's integrity and explicit inversion. Through extensive experiments, InfEdit shows strong performance in various editing tasks and also maintains a seamless workflow (less than 3 seconds on one single A40), demonstrating the potential for real-time applications.</div>
+            <div class="description">Recent advancements in foundation models (FMs) have unlocked new prospects in autonomous driving, yet the experimental settings of these studies are preliminary, over-simplified, and fail to capture the complexity of real-world driving scenarios in human environments. It remains under-explored whether FM agents can handle long-horizon navigation tasks with free-from dialogue and deal with unexpected situations caused by environmental dynamics or task changes. To explore the capabilities and boundaries of FMs faced with the challenges above, we introduce DriVLMe, a video-language-model-based agent to facilitate natural and effective communication between humans and autonomous vehicles that perceive the environment and navigate. We develop DriVLMe from both embodied experiences in a simulated environment and social experiences from real human dialogue. While DriVLMe demonstrates competitive performance in both open-loop benchmarks and closed-loop human studies, we reveal several limitations and challenges, including unacceptable inference time, imbalanced training data, limited visual understanding, challenges with multi-turn interactions, simplified language generation from robotic experiences, and difficulties in handling on-the-fly unexpected situations like environmental dynamics and task changes.</div>
           </div>
           <div class="icons">
             
             
-            <a href="https://sled-group.github.io/InfEdit/"><i class="far fa-eye"></i></a>
+            <a href="https://sled-group.github.io/driVLMe/"><i class="far fa-eye"></i></a>
             
             
             <a title="3" onClick="open_modal(this.title)" class="modal-btn"><i class="fas fa-plus"></i></a>
@@ -407,15 +427,18 @@
       <p>&times;</p>
     </div>
     <div class="header">
-      <p class="date">09/2023 &ndash; 11/2023</p>
-      <p class="title">Inversion-Free Image Editing with Natural Language</p>
-      <p class="summary">https://arxiv.org/abs/2312.04965</p>
+      <p class="date">06/2024</p>
+      <p class="title">DriVLMe, Enhancing LLM-based Autonomous Driving Agents with Embodied and Social Experiences</p>
+      <p class="summary">https://arxiv.org/abs/2406.03008</p>
     </div>
     <div class="content">
       
-        <img src="/assets/project/infedit_gif.gif" alt="">
+        
+        
+        <img src="/assets/project/drivlme.jpg" alt="">
+        
       
-      <div class="description">Despite recent advances in inversion-based editing, text-guided image manipulation remains challenging for diffusion models. The primary bottlenecks include 1) the time-consuming nature of the inversion process; 2) the struggle to balance consistency with accuracy; 3) the lack of compatibility with efficient consistency sampling methods used in consistency models. To address the above issues, we start by asking ourselves if the inversion process can be eliminated for editing. We show that when the initial sample is known, a special variance schedule reduces the denoising step to the same form as the multi-step consistency sampling. We name this Denoising Diffusion Consistent Model (DDCM), and note that it implies a virtual inversion strategy without explicit inversion in sampling. We further unify the attention control mechanisms in a tuning-free framework for text-guided editing. Combining them, we present inversion-free editing (InfEdit), which allows for consistent and faithful editing for both rigid and non-rigid semantic changes, catering to intricate modifications without compromising on the image's integrity and explicit inversion. Through extensive experiments, InfEdit shows strong performance in various editing tasks and also maintains a seamless workflow (less than 3 seconds on one single A40), demonstrating the potential for real-time applications.</div>
+      <div class="description">Recent advancements in foundation models (FMs) have unlocked new prospects in autonomous driving, yet the experimental settings of these studies are preliminary, over-simplified, and fail to capture the complexity of real-world driving scenarios in human environments. It remains under-explored whether FM agents can handle long-horizon navigation tasks with free-from dialogue and deal with unexpected situations caused by environmental dynamics or task changes. To explore the capabilities and boundaries of FMs faced with the challenges above, we introduce DriVLMe, a video-language-model-based agent to facilitate natural and effective communication between humans and autonomous vehicles that perceive the environment and navigate. We develop DriVLMe from both embodied experiences in a simulated environment and social experiences from real human dialogue. While DriVLMe demonstrates competitive performance in both open-loop benchmarks and closed-loop human studies, we reveal several limitations and challenges, including unacceptable inference time, imbalanced training data, limited visual understanding, challenges with multi-turn interactions, simplified language generation from robotic experiences, and difficulties in handling on-the-fly unexpected situations like environmental dynamics and task changes.</div>
       
     </div>
   </div>
@@ -429,23 +452,26 @@
         <div class="card">
           
           <div class="img-wrap">
-            <img src="/assets/project/cyclenet.png" alt="">
+            
+            
+            <img src="/assets/project/infedit_gif.gif" alt="">
+            
           </div>
           
           <div class="text-wrap ">
             <div class="title-wrap">
-              <p class="date">03/2023 &ndash; 06/2023</p>
-              <div class="title">CycleNet, Rethinking Cycle Consistency in Text-Guided Diffusion for Image Manipulation</div>
+              <p class="date">12/2023</p>
+              <div class="title">Inversion-Free Image Editing with Natural Language</div>
             </div>
             <div class="meta">
               
             </div>
-            <div class="description">Diffusion models (DMs) have enabled breakthroughs in image synthesis tasks but lack an intuitive interface for consistent image-to-image (I2I) translation. Various methods have been explored to address this issue, including mask-based methods, attention-based methods, and image-conditioning. However, it remains a critical challenge to enable unpaired I2I translation with pre-trained DMs while maintaining satisfying consistency. This paper introduces Cyclenet, a novel but simple method that incorporates cycle consistency into DMs to regularize image manipulation. We validate Cyclenet on unpaired I2I tasks of different granularities. Besides the scene and object level translation, we additionally contribute a multi-domain I2I translation dataset to study the physical state changes of objects. Our empirical studies show that Cyclenet is superior in translation consistency and quality, and can generate high-quality images for out-of-domain distributions with a simple change of the textual prompt. Cyclenet is a practical framework, which is robust even with very limited training data (around 2k) and requires minimal computational resources (1 GPU) to train.</div>
+            <div class="description">Despite recent advances in inversion-based editing, text-guided image manipulation remains challenging for diffusion models. The primary bottlenecks include 1) the time-consuming nature of the inversion process; 2) the struggle to balance consistency with accuracy; 3) the lack of compatibility with efficient consistency sampling methods used in consistency models. To address the above issues, we start by asking ourselves if the inversion process can be eliminated for editing. We show that when the initial sample is known, a special variance schedule reduces the denoising step to the same form as the multi-step consistency sampling. We name this Denoising Diffusion Consistent Model (DDCM), and note that it implies a virtual inversion strategy without explicit inversion in sampling. We further unify the attention control mechanisms in a tuning-free framework for text-guided editing. Combining them, we present inversion-free editing (InfEdit), which allows for consistent and faithful editing for both rigid and non-rigid semantic changes, catering to intricate modifications without compromising on the image's integrity and explicit inversion. Through extensive experiments, InfEdit shows strong performance in various editing tasks and also maintains a seamless workflow (less than 3 seconds on one single A40), demonstrating the potential for real-time applications.</div>
           </div>
           <div class="icons">
             
             
-            <a href="https://cyclenetweb.github.io/"><i class="far fa-eye"></i></a>
+            <a href="https://sled-group.github.io/InfEdit/"><i class="far fa-eye"></i></a>
             
             
             <a title="4" onClick="open_modal(this.title)" class="modal-btn"><i class="fas fa-plus"></i></a>
@@ -462,15 +488,18 @@
       <p>&times;</p>
     </div>
     <div class="header">
-      <p class="date">03/2023 &ndash; 06/2023</p>
-      <p class="title">CycleNet, Rethinking Cycle Consistency in Text-Guided Diffusion for Image Manipulation</p>
-      <p class="summary">Admitted to NeurIPS 2023</p>
+      <p class="date">12/2023</p>
+      <p class="title">Inversion-Free Image Editing with Natural Language</p>
+      <p class="summary">https://arxiv.org/abs/2312.04965</p>
     </div>
     <div class="content">
       
-        <img src="/assets/project/cyclenet.png" alt="">
+        
+        
+        <img src="/assets/project/infedit_gif.gif" alt="">
+        
       
-      <div class="description">Diffusion models (DMs) have enabled breakthroughs in image synthesis tasks but lack an intuitive interface for consistent image-to-image (I2I) translation. Various methods have been explored to address this issue, including mask-based methods, attention-based methods, and image-conditioning. However, it remains a critical challenge to enable unpaired I2I translation with pre-trained DMs while maintaining satisfying consistency. This paper introduces Cyclenet, a novel but simple method that incorporates cycle consistency into DMs to regularize image manipulation. We validate Cyclenet on unpaired I2I tasks of different granularities. Besides the scene and object level translation, we additionally contribute a multi-domain I2I translation dataset to study the physical state changes of objects. Our empirical studies show that Cyclenet is superior in translation consistency and quality, and can generate high-quality images for out-of-domain distributions with a simple change of the textual prompt. Cyclenet is a practical framework, which is robust even with very limited training data (around 2k) and requires minimal computational resources (1 GPU) to train.</div>
+      <div class="description">Despite recent advances in inversion-based editing, text-guided image manipulation remains challenging for diffusion models. The primary bottlenecks include 1) the time-consuming nature of the inversion process; 2) the struggle to balance consistency with accuracy; 3) the lack of compatibility with efficient consistency sampling methods used in consistency models. To address the above issues, we start by asking ourselves if the inversion process can be eliminated for editing. We show that when the initial sample is known, a special variance schedule reduces the denoising step to the same form as the multi-step consistency sampling. We name this Denoising Diffusion Consistent Model (DDCM), and note that it implies a virtual inversion strategy without explicit inversion in sampling. We further unify the attention control mechanisms in a tuning-free framework for text-guided editing. Combining them, we present inversion-free editing (InfEdit), which allows for consistent and faithful editing for both rigid and non-rigid semantic changes, catering to intricate modifications without compromising on the image's integrity and explicit inversion. Through extensive experiments, InfEdit shows strong performance in various editing tasks and also maintains a seamless workflow (less than 3 seconds on one single A40), demonstrating the potential for real-time applications.</div>
       
     </div>
   </div>
@@ -484,23 +513,26 @@
         <div class="card">
           
           <div class="img-wrap">
-            <img src="/assets/project/dorothie.png" alt="The Double Wizard Setup">
+            
+            
+            <img src="/assets/project/cyclenet.png" alt="">
+            
           </div>
           
           <div class="text-wrap ">
             <div class="title-wrap">
-              <p class="date">02/2022 &ndash; 06/2022</p>
-              <div class="title">DOROTHIE, Spoken Dialogue for Handling Unexpected Situations in Interactive Autonomous Driving Agents</div>
+              <p class="date">10/2023</p>
+              <div class="title">CycleNet, Rethinking Cycle Consistency in Text-Guided Diffusion for Image Manipulation</div>
             </div>
             <div class="meta">
               
             </div>
-            <div class="description">We tackled the limitations of vision-language navigation tasks, where most existing approaches were limited in their ability to navigate in a continuous and dynamic environment and communicate with humans in free-form. To address these limitations and collect data, we extended the traditional Wizard of Oz study and proposed the duo-wizard setup. This allowed us to add dynamic changes in the environment and tasks to the simulation, which provided a more realistic testbed for evaluating an agent's ability to communicate and navigate.</div>
+            <div class="description">Diffusion models (DMs) have enabled breakthroughs in image synthesis tasks but lack an intuitive interface for consistent image-to-image (I2I) translation. Various methods have been explored to address this issue, including mask-based methods, attention-based methods, and image-conditioning. However, it remains a critical challenge to enable unpaired I2I translation with pre-trained DMs while maintaining satisfying consistency. This paper introduces Cyclenet, a novel but simple method that incorporates cycle consistency into DMs to regularize image manipulation. We validate Cyclenet on unpaired I2I tasks of different granularities. Besides the scene and object level translation, we additionally contribute a multi-domain I2I translation dataset to study the physical state changes of objects. Our empirical studies show that Cyclenet is superior in translation consistency and quality, and can generate high-quality images for out-of-domain distributions with a simple change of the textual prompt. Cyclenet is a practical framework, which is robust even with very limited training data (around 2k) and requires minimal computational resources (1 GPU) to train.</div>
           </div>
           <div class="icons">
             
             
-            <a href="https://arxiv.org/abs/2210.12511"><i class="far fa-eye"></i></a>
+            <a href="https://cyclenetweb.github.io/"><i class="far fa-eye"></i></a>
             
             
             <a title="5" onClick="open_modal(this.title)" class="modal-btn"><i class="fas fa-plus"></i></a>
@@ -517,15 +549,18 @@
       <p>&times;</p>
     </div>
     <div class="header">
-      <p class="date">02/2022 &ndash; 06/2022</p>
-      <p class="title">DOROTHIE, Spoken Dialogue for Handling Unexpected Situations in Interactive Autonomous Driving Agents</p>
-      <p class="summary">Admitted to findings of EMNLP 2022</p>
+      <p class="date">10/2023</p>
+      <p class="title">CycleNet, Rethinking Cycle Consistency in Text-Guided Diffusion for Image Manipulation</p>
+      <p class="summary">Admitted to NeurIPS 2023</p>
     </div>
     <div class="content">
       
-        <img src="/assets/project/dorothie.png" alt="The Double Wizard Setup">
+        
+        
+        <img src="/assets/project/cyclenet.png" alt="">
+        
       
-      <div class="description">We tackled the limitations of vision-language navigation tasks, where most existing approaches were limited in their ability to navigate in a continuous and dynamic environment and communicate with humans in free-form. To address these limitations and collect data, we extended the traditional Wizard of Oz study and proposed the duo-wizard setup. This allowed us to add dynamic changes in the environment and tasks to the simulation, which provided a more realistic testbed for evaluating an agent's ability to communicate and navigate.</div>
+      <div class="description">Diffusion models (DMs) have enabled breakthroughs in image synthesis tasks but lack an intuitive interface for consistent image-to-image (I2I) translation. Various methods have been explored to address this issue, including mask-based methods, attention-based methods, and image-conditioning. However, it remains a critical challenge to enable unpaired I2I translation with pre-trained DMs while maintaining satisfying consistency. This paper introduces Cyclenet, a novel but simple method that incorporates cycle consistency into DMs to regularize image manipulation. We validate Cyclenet on unpaired I2I tasks of different granularities. Besides the scene and object level translation, we additionally contribute a multi-domain I2I translation dataset to study the physical state changes of objects. Our empirical studies show that Cyclenet is superior in translation consistency and quality, and can generate high-quality images for out-of-domain distributions with a simple change of the textual prompt. Cyclenet is a practical framework, which is robust even with very limited training data (around 2k) and requires minimal computational resources (1 GPU) to train.</div>
       
     </div>
   </div>
@@ -539,25 +574,26 @@
         <div class="card">
           
           <div class="img-wrap">
-            <img src="/assets/project/aesrgan.png" alt="">
+            
+            
+            <img src="/assets/project/dorothie.png" alt="The Double Wizard Setup">
+            
           </div>
           
           <div class="text-wrap ">
             <div class="title-wrap">
-              <p class="date">11/2021 &ndash; 12/2021</p>
-              <div class="title">A-ESRGAN, Training Real-World Blind Super-Resolution with Attention U-Net Discriminators</div>
+              <p class="date">10/2022</p>
+              <div class="title">DOROTHIE, Spoken Dialogue for Handling Unexpected Situations in Interactive Autonomous Driving Agents</div>
             </div>
             <div class="meta">
               
             </div>
-            <div class="description">In the field of Computer Vision, my work focuses on a novel approach to Blind Image Super-Resolution (SR), a task aimed at restoring low-resolution images affected by complex, unknown distortions. My key contribution is the development of A-ESRGAN, an innovative Generative Adversarial Network (GAN) model featuring an attention U-Net based, multi-scale discriminator. This model stands out as the first to integrate attention U-Net structure as a discriminator in GAN for addressing blind SR challenges.
-My research addresses the limitations of existing GAN structures that neglect an image's structural features, leading to issues like twisted lines and background anomalies. A-ESRGAN overcomes these through its unique design, enabling enhanced focus on structural details across multiple scales. The result is a breakthrough in generating more perceptually realistic high-resolution images.
-This work not only sets a new benchmark in the non-reference natural image quality evaluator (NIQE) metric but also demonstrates, through extensive ablation studies, how the RRDB-based generator in A-ESRGAN effectively leverages image structural features, outperforming previous models in blind SR tasks.</div>
+            <div class="description">We tackled the limitations of vision-language navigation tasks, where most existing approaches were limited in their ability to navigate in a continuous and dynamic environment and communicate with humans in free-form. To address these limitations and collect data, we extended the traditional Wizard of Oz study and proposed the duo-wizard setup. This allowed us to add dynamic changes in the environment and tasks to the simulation, which provided a more realistic testbed for evaluating an agent's ability to communicate and navigate.</div>
           </div>
           <div class="icons">
             
             
-            <a href="https://arxiv.org/abs/2112.10046"><i class="far fa-eye"></i></a>
+            <a href="https://arxiv.org/abs/2210.12511"><i class="far fa-eye"></i></a>
             
             
             <a title="6" onClick="open_modal(this.title)" class="modal-btn"><i class="fas fa-plus"></i></a>
@@ -574,13 +610,79 @@ This work not only sets a new benchmark in the non-reference natural image quali
       <p>&times;</p>
     </div>
     <div class="header">
-      <p class="date">11/2021 &ndash; 12/2021</p>
+      <p class="date">10/2022</p>
+      <p class="title">DOROTHIE, Spoken Dialogue for Handling Unexpected Situations in Interactive Autonomous Driving Agents</p>
+      <p class="summary">Admitted to findings of EMNLP 2022</p>
+    </div>
+    <div class="content">
+      
+        
+        
+        <img src="/assets/project/dorothie.png" alt="The Double Wizard Setup">
+        
+      
+      <div class="description">We tackled the limitations of vision-language navigation tasks, where most existing approaches were limited in their ability to navigate in a continuous and dynamic environment and communicate with humans in free-form. To address these limitations and collect data, we extended the traditional Wizard of Oz study and proposed the duo-wizard setup. This allowed us to add dynamic changes in the environment and tasks to the simulation, which provided a more realistic testbed for evaluating an agent's ability to communicate and navigate.</div>
+      
+    </div>
+  </div>
+</div>
+      
+      <!-- Modal Box -->
+      
+      
+      
+      <div class="card-wrapper">
+        <div class="card">
+          
+          <div class="img-wrap">
+            
+            
+            <img src="/assets/project/aesrgan.png" alt="">
+            
+          </div>
+          
+          <div class="text-wrap ">
+            <div class="title-wrap">
+              <p class="date">12/2021</p>
+              <div class="title">A-ESRGAN, Training Real-World Blind Super-Resolution with Attention U-Net Discriminators</div>
+            </div>
+            <div class="meta">
+              
+            </div>
+            <div class="description">In the field of Computer Vision, my work focuses on a novel approach to Blind Image Super-Resolution (SR), a task aimed at restoring low-resolution images affected by complex, unknown distortions. My key contribution is the development of A-ESRGAN, an innovative Generative Adversarial Network (GAN) model featuring an attention U-Net based, multi-scale discriminator. This model stands out as the first to integrate attention U-Net structure as a discriminator in GAN for addressing blind SR challenges.
+My research addresses the limitations of existing GAN structures that neglect an image's structural features, leading to issues like twisted lines and background anomalies. A-ESRGAN overcomes these through its unique design, enabling enhanced focus on structural details across multiple scales. The result is a breakthrough in generating more perceptually realistic high-resolution images.
+This work not only sets a new benchmark in the non-reference natural image quality evaluator (NIQE) metric but also demonstrates, through extensive ablation studies, how the RRDB-based generator in A-ESRGAN effectively leverages image structural features, outperforming previous models in blind SR tasks.</div>
+          </div>
+          <div class="icons">
+            
+            
+            <a href="https://arxiv.org/abs/2112.10046"><i class="far fa-eye"></i></a>
+            
+            
+            <a title="7" onClick="open_modal(this.title)" class="modal-btn"><i class="fas fa-plus"></i></a>
+            
+          </div>
+        </div>
+      </div>
+      <!-- Modal Box -->
+      
+      <div id="7" class="modal">
+  <div class="modal-background" onClick="close_modal()"></div>
+  <div class="modal-content">
+    <div class="close-modal" onClick="close_modal()">
+      <p>&times;</p>
+    </div>
+    <div class="header">
+      <p class="date">12/2021</p>
       <p class="title">A-ESRGAN, Training Real-World Blind Super-Resolution with Attention U-Net Discriminators</p>
       <p class="summary">Admitted to PRICAI 2022</p>
     </div>
     <div class="content">
       
+        
+        
         <img src="/assets/project/aesrgan.png" alt="">
+        
       
       <div class="description">In the field of Computer Vision, my work focuses on a novel approach to Blind Image Super-Resolution (SR), a task aimed at restoring low-resolution images affected by complex, unknown distortions. My key contribution is the development of A-ESRGAN, an innovative Generative Adversarial Network (GAN) model featuring an attention U-Net based, multi-scale discriminator. This model stands out as the first to integrate attention U-Net structure as a discriminator in GAN for addressing blind SR challenges.
 My research addresses the limitations of existing GAN structures that neglect an image's structural features, leading to issues like twisted lines and background anomalies. A-ESRGAN overcomes these through its unique design, enabling enhanced focus on structural details across multiple scales. The result is a breakthrough in generating more perceptually realistic high-resolution images.
@@ -605,6 +707,22 @@ This work not only sets a new benchmark in the non-reference natural image quali
     <p class="title">RECENT PUBLICATIONS</p>
     [<a class="btn" href="/publications" title="Publications">All Publications</a>]
     <ol class="bibliography"><li><!-- Entry bib key -->
+<div id="huang2026phymotion">
+  
+  <!-- Title -->
+  <div class="title">PhyMotion: Structured 3D Motion Reward for Physics-Grounded Human Video Generation</div>
+  <!-- Author -->
+  <div class="author">
+            <em>Huang, Yidong</em>,&nbsp;Wang, Zun,&nbsp;Lin, Han,&nbsp;Kim, Dong-Ki,&nbsp;Omidshafiei, Shayegan,&nbsp;Yoon, Jaehong,&nbsp;Cho, Jaemin,&nbsp;Zhang, Yue,&nbsp;and Bansal, Mohit
+  </div>
+
+  <!-- Journal/Book title and date -->
+  
+  <div class="third-line">
+    arXiv preprint arXiv:2605.14269, 2026
+  </div>
+</div></li>
+<li><!-- Entry bib key -->
 <div id="wu2025mechanistic">
   
   <!-- Title -->
@@ -634,22 +752,6 @@ This work not only sets a new benchmark in the non-reference natural image quali
   
   <div class="third-line">
     arXiv preprint arXiv:2511.17450, 2025
-  </div>
-</div></li>
-<li><!-- Entry bib key -->
-<div id="xu2024inversion">
-  
-  <!-- Title -->
-  <div class="title">Inversion-free image editing with language-guided diffusion models</div>
-  <!-- Author -->
-  <div class="author">Xu, Sihan,&nbsp;
-            <em>Huang, Yidong</em>,&nbsp;Pan, Jiayi,&nbsp;Ma, Ziqiao,&nbsp;and Chai, Joyce
-  </div>
-
-  <!-- Journal/Book title and date -->
-  
-  <div class="third-line">
-    In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 9452–9461, 2024
   </div>
 </div></li></ol>
   </div>
