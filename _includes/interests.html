@@ -5,6 +5,7 @@
     <li class="meta">
         <p class="description">{{ interest.experience }}</p>
         <p class="program">{{ interest.program }}</p>
+        {% if interest.host %}<p class="host">{{ interest.host }}</p>{% endif %}
     </li>
     {% endfor %}
 </ul>

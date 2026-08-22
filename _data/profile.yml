@@ -1,7 +1,7 @@
 image: assets/img/avatar.jpg
 username: Yidong Huang
 description:
-  I'm a Second Year CS Ph.D. student at UNC Chapel Hill, advised by [Prof. Mohit Bansal](https://www.cs.unc.edu/~mbansal/). I interned at Adobe Research, mentored by [Subhojyoti Mukherjee](https://subhojyoti.github.io/) and [Krishna Kumar Singh](https://krsingh.cs.ucdavis.edu/). I obtained my master degree from University of Michigan advised by [Prof. Joyce Chai](https://web.eecs.umich.edu/~chaijy/). In my master time, I also interned at Boson AI, supervised by [Yi Zhu](https://bryanyzhu.github.io/). Before that, I got my bachelor degree from University of Michigan and Shanghai Jiao Tong University. 
+  I'm a Second Year CS Ph.D. student at UNC Chapel Hill, advised by [Prof. Mohit Bansal](https://www.cs.unc.edu/~mbansal/). I obtained my master degree from University of Michigan advised by [Prof. Joyce Chai](https://web.eecs.umich.edu/~chaijy/). Before that, I got my bachelor degree from University of Michigan and Shanghai Jiao Tong University. 
 
 interest:
   I specialize in <u>Embodied Artificial Intelligence</u> and the <u>Generative AI</u> that interact with humans and their environments. My current research goal is to create AI agents beyond mere perception and reactive generation, to develop rich representations of the world and human partners, enabling deliberative planning and collaboration with humans.
@@ -36,15 +36,19 @@ interests: # Remove for hiding the interests section
   -
     experience : MURGe-Lab (UNC-NLP Group)
     program: Graduate Research Assistant
+    host: Advised by <a href="https://www.cs.unc.edu/~mbansal/">Prof. Mohit Bansal</a>
   - 
     experience : Adobe Research
     program: Research Scientist Intern
+    host: Hosted by <a href="https://subhojyoti.github.io/">Dr. Subhojyoti Mukherjee</a> and <a href="https://krsingh.cs.ucdavis.edu/">Dr. Krishna Kumar Singh</a>
   - 
     experience : Boson AI
     program: Research Intern
+    host: Hosted by <a href="https://bryanyzhu.github.io/">Dr. Yi Zhu</a>
   - 
     experience : Situated Language and Embodied Dialogue (SLED) lab
     program: Research Assistant
+    host: Advised by <a href="https://web.eecs.umich.edu/~chaijy/">Prof. Joyce Chai</a>
 social:
   email: owenh@cs.unc.edu # Full email address, e.g. "sample@google.com"
   orcid: 

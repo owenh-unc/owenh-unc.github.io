@@ -7,6 +7,9 @@
     <div class="header">
       <p class="date">{{ project.date }}</p>
       <p class="title">{{ project.title }}</p>
+      {% if project.authors %}<p class="authors">{{ project.authors }}</p>{% endif %}
+      {% if project.equal %}<p class="eqnote">* Equal contribution</p>{% endif %}
+      {% if project.venue %}<p class="venue">{{ project.venue }}</p>{% endif %}
       <p class="summary">{{ project.summary }}</p>
     </div>
     <div class="content">

@@ -94,6 +94,38 @@
             -webkit-line-clamp: 4;
             overflow: hidden;
           }
+          .pubmeta {
+            margin: 15px auto;
+            .authors {
+              font-size: 0.85rem;
+              line-height: 1.35rem;
+              color: rgba(0, 0, 0, 0.7);
+              strong {
+                font-size: inherit;
+                line-height: inherit;
+                font-weight: 700;
+                color: $theme-dark;
+              }
+              sup {
+                font-size: 0.7em;
+                line-height: 0;
+                vertical-align: super;
+              }
+            }
+            .eqnote {
+              margin-top: 4px;
+              font-size: 0.72rem;
+              line-height: 1rem;
+              color: rgba(0, 0, 0, 0.45);
+            }
+            .venue {
+              margin-top: 8px;
+              font-size: 0.8rem;
+              font-weight: 600;
+              line-height: 1.2rem;
+              color: $theme-color;
+            }
+          }
         }
         .icons{
           margin-bottom: 20px;

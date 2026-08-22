@@ -79,6 +79,34 @@
                 font-weight: 600;
                 padding-left: 0px!important;
             }
+            .authors{
+                font-size: 0.9rem;
+                line-height: 1.4rem;
+                color: rgba(0, 0, 0, 0.7);
+                margin-bottom: 6px;
+                strong{
+                    font-size: inherit;
+                    line-height: inherit;
+                    font-weight: 700;
+                    color: $theme-dark;
+                }
+                sup{
+                    font-size: 0.7em;
+                    line-height: 0;
+                    vertical-align: super;
+                }
+            }
+            .eqnote{
+                font-size: 0.75rem;
+                color: rgba(0, 0, 0, 0.45);
+                margin-bottom: 6px;
+            }
+            .venue{
+                font-size: 0.85rem;
+                font-weight: 600;
+                color: $theme-color;
+                margin-bottom: 12px;
+            }
             .summary{
                 font-size: 0.95rem;
             }

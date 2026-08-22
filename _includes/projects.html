@@ -30,7 +30,15 @@
               {% endfor %}
               {% endif %}
             </div>
+            {% if project.authors or project.venue %}
+            <div class="pubmeta">
+              {% if project.authors %}<p class="authors">{{ project.authors }}</p>{% endif %}
+              {% if project.equal %}<p class="eqnote">* Equal contribution</p>{% endif %}
+              {% if project.venue %}<p class="venue">{{ project.venue }}</p>{% endif %}
+            </div>
+            {% else %}
             <div class="description">{{ project.description }}</div>
+            {% endif %}
           </div>
           <div class="icons">
             {% if project.url %}
