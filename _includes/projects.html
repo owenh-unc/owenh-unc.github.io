@@ -1,66 +1,50 @@
-<section id="project">
+<section id="project" aria-labelledby="publications-heading">
   <div class="project-wrap">
-    <p class="title">{{ site.theme_settings.projects_title }}</p>
-    <div class="card-container">
-      {% for _ in site.data.projects %}
-      {% assign project = _.project %}
-      {% assign id = id | plus: 1 %}
-      <div class="card-wrapper">
-        <div class="card">
-          {% if project.image %}
-          <div class="img-wrap">
-            {% assign media_ext = project.image.path | split: '.' | last | downcase %}
-            {% if media_ext == 'mp4' or media_ext == 'webm' %}
-            <video src="{{ project.image.path | prepend: '/assets/project/' | relative_url }}" autoplay loop muted playsinline aria-label="{{ project.image.alt }}"></video>
-            {% else %}
-            <img src="{{ project.image.path | prepend: '/assets/project/' | relative_url }}" alt="{{ project.image.alt }}">
-            {% endif %}
-          </div>
+    <div class="publications-heading">
+      <h2 id="publications-heading">{{ site.theme_settings.projects_title }}</h2>
+      {% if site.publications %}<a href="{{ '/publications' | relative_url }}">All publications &rarr;</a>{% endif %}
+    </div>
+    <p class="contribution-note">* Equal contribution</p>
+    <div class="publication-list">
+      {% for item in site.data.projects %}
+      {% assign project = item.project %}
+      {% if project.print %}
+      <article class="publication-row" aria-labelledby="publication-{{ forloop.index }}">
+        {% if project.image %}
+        <div class="publication-media">
+          {% assign media_ext = project.image.path | split: '.' | last | downcase %}
+          {% assign media_alt = project.image.alt | default: project.title %}
+          {% if media_ext == 'mp4' or media_ext == 'webm' %}
+          <video autoplay controls loop muted playsinline preload="auto" {% if project.image.poster %}poster="{{ project.image.poster | prepend: '/assets/project/' | relative_url }}"{% endif %} aria-label="{{ media_alt | escape }}">
+            {% if project.image.webm %}<source src="{{ project.image.webm | prepend: '/assets/project/' | relative_url }}" type="video/webm">{% endif %}
+            <source src="{{ project.image.path | prepend: '/assets/project/' | relative_url }}" type="video/{{ media_ext }}">
+            <a href="{{ project.image.path | prepend: '/assets/project/' | relative_url }}">Watch video</a>
+          </video>
+          {% else %}
+          <a href="{{ project.url }}" tabindex="-1" aria-hidden="true"><img src="{{ project.image.path | prepend: '/assets/project/' | relative_url }}" alt="{{ media_alt | escape }}" loading="lazy" width="200" height="140"></a>
           {% endif %}
-          <div class="text-wrap {% if project.image %}{% endif %}">
-            <div class="title-wrap">
-              <p class="date">{{ project.date }}</p>
-              <div class="title">{{ project.title }}</div>
-            </div>
-            <div class="meta">
-              {% if project.skills %}
-              &middot;
-              {% for skill in project.skills %}
-              <span>#{{ skill }}</span>
-              {% endfor %}
-              {% endif %}
-            </div>
-            {% if project.authors or project.venue %}
-            <div class="pubmeta">
-              {% if project.authors %}<p class="authors">{{ project.authors }}</p>{% endif %}
-              {% if project.equal %}<p class="eqnote">* Equal contribution</p>{% endif %}
-              {% if project.venue %}<p class="venue">{{ project.venue }}</p>{% endif %}
-            </div>
-            {% else %}
-            <div class="description">{{ project.description }}</div>
-            {% endif %}
-          </div>
-          <div class="icons">
-            {% if project.url %}
-            {% assign url = project.url %}
-            <a href="{{ url }}"><i class="far fa-eye"></i></a>
-            {% endif %}
-            {% if project.modal %}
-            <a title="{{ id }}" onClick="open_modal(this.title)" class="modal-btn"><i class="fas fa-plus"></i></a>
-            {% endif %}
-          </div>
         </div>
-      </div>
-      <!-- Modal Box -->
-      {% if project.modal %}
-      {% include modal.html %}
+        {% endif %}
+        <div class="publication-content">
+          <h3 id="publication-{{ forloop.index }}"><a href="{{ project.url }}">{{ project.title }}</a></h3>
+          {% if project.authors %}<p class="authors">{{ project.authors }}</p>{% endif %}
+          {% if project.venue %}<p class="venue">{{ project.venue }}</p>{% endif %}
+          <div class="publication-links">
+            {% if project.summary contains 'https://' %}<a href="{{ project.summary }}">Paper</a>{% endif %}
+            {% if project.url contains 'arxiv.org' %}
+              {% unless project.summary == project.url %}<a href="{{ project.url }}">Paper</a>{% endunless %}
+            {% elsif project.url %}<a href="{{ project.url }}">Project page</a>{% endif %}
+          </div>
+          {% if project.description %}
+          <details class="publication-abstract">
+            <summary>Abstract</summary>
+            <div>{{ project.description | markdownify }}</div>
+          </details>
+          {% endif %}
+        </div>
+      </article>
       {% endif %}
-      <!-- Modal Box -->
       {% endfor %}
     </div>
   </div>
-  <div class="bg"></div>
 </section>
-
-<!-- modal -->
-<script type="text/javascript" src="{{ '/assets/js/modal.js' | relative_url }}"></script>
