@@ -1,31 +1,43 @@
-#!/usr/bin/bash
-# Publish to github pages on gh-pages branch
+#!/usr/bin/env bash
+# Build main's current commit and publish the generated site to gh-pages.
+set -euo pipefail
 
+cd "$(git rev-parse --show-toplevel)"
 if [ -n "$(git status --porcelain)" ]; then
   echo "Please commit all changes before publishing with this script"
   exit 1
 fi
-
 if [ ! -f "_config.yml" ]; then
-  echo "Please run this script from the base project directory"
+  echo "Please run this script from the website repository"
   exit 1
 fi
 
 commit_hash=$(git rev-parse HEAD)
-branch=$(git rev-parse --abbrev-ref HEAD)
-if [ -d "_scripts/publish.d" ]; then
-  rm -r "/tmp/publish.d"
-  cp -r "_scripts/publish.d" "/tmp/publish.d"
-fi
-bundle exec jekyll b -d /tmp/gh-pages-publish
-git checkout gh-pages
-git pull
-git ls-files -z -- . ':!:.git*' | xargs -0 rm -f
-cp -r /tmp/gh-pages-publish/* .
-for script in "/tmp/publish.d/*"; do
-  $script
+publish_root=$(mktemp -d "${TMPDIR:-/tmp}/owenh-publish.XXXXXX")
+cleanup() {
+  if [ -d "$publish_root/checkout" ]; then
+    git worktree remove --force "$publish_root/checkout"
+  fi
+  rm -rf -- "$publish_root"
+}
+trap cleanup EXIT
+
+bundle exec jekyll build --destination "$publish_root/site"
+git fetch origin gh-pages
+git worktree add --detach "$publish_root/checkout" origin/gh-pages
+# Delete tracked files only in the temporary publishing worktree.
+git -C "$publish_root/checkout" rm -r --ignore-unmatch -- .
+cp -a "$publish_root/site/." "$publish_root/checkout/"
+
+for script in "$PWD"/_scripts/publish.d/*.sh; do
+  [ -f "$script" ] || continue
+  (cd "$publish_root/checkout" && bash "$script")
 done
-git add .
-git commit -m "publish commit ${commit_hash}"
-git push
-git checkout ${branch}
+
+git -C "$publish_root/checkout" add --all
+if git -C "$publish_root/checkout" diff --cached --quiet; then
+  echo "The published site is already up to date."
+else
+  git -C "$publish_root/checkout" commit -m "Publish source commit $commit_hash"
+  git -C "$publish_root/checkout" push origin HEAD:gh-pages
+fi
